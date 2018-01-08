@@ -43,4 +43,28 @@ class RealmManager {
         }
         completion?(note, nil)
     }
+    
+    func deleteNote(note: NoteDataModel,completion:((NoteDataModel?,Error?)->())?) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(note)
+            }
+        }
+        catch let error as NSError {
+            completion?(note, error)
+        }
+        completion?(note, nil)
+    }
+    
+    func getNotes() -> Results<NoteDataModel>? {
+        do {
+            let realm = try Realm()
+            return realm.objects(NoteDataModel.self)
+        }
+        catch let error as NSError {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
 }

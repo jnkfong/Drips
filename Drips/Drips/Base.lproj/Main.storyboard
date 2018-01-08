@@ -25,6 +25,9 @@
                                     <navigationItem id="xdc-uX-5If">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0ya-3n-m9C">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="6P9-Of-lt2" kind="show" id="mCO-ZH-xnc"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -49,11 +52,11 @@
                     <navigationItem key="navigationItem" id="nnN-WG-M3p">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="C3c-dq-dx7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="6P9-Of-lt2" kind="push" id="Q6G-p4-ZDd"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteTableView" destination="iCU-7O-bSf" id="nox-0R-H8P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,17 +83,21 @@
                                     <navigationItem id="R6f-RE-k7H">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wdh-Rv-Pb9">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Snf-gp-NJa"/>
+                                                <action selector="cancelDidPressed:" destination="6P9-Of-lt2" id="ahv-mo-S0A"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="MS7-yr-2Ti"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JvA-aR-fUO"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JvA-aR-fUO">
+                                            <connections>
+                                                <action selector="addNotePressed:" destination="6P9-Of-lt2" id="STt-LZ-W4R"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eWj-Ju-brr">
                                 <rect key="frame" x="16" y="139" width="343" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -111,15 +118,19 @@
                         <viewLayoutGuide key="safeArea" id="MXT-az-lNE"/>
                     </view>
                     <navigationItem key="navigationItem" id="PEG-vW-xeN"/>
+                    <connections>
+                        <outlet property="messageTextView" destination="eWj-Ju-brr" id="Tv1-45-nYd"/>
+                        <outlet property="titleTextField" destination="3DB-60-u75" id="bRO-hq-Dbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9o-ZZ-Ef6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1528.8" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Note View Controller-->
         <scene sceneID="x4h-EW-ubu">
             <objects>
-                <viewController id="HlW-DI-5yB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditNoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HlW-DI-5yB" customClass="EditNoteViewController" customModule="Drips" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h0N-BY-K0d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +142,14 @@
                                     <navigationItem id="Hdz-64-bWO">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qgy-C1-orr">
                                             <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="lsz-AC-my4"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="ezb-D0-iyX"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pn2-bF-J5S"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pn2-bF-J5S">
+                                            <connections>
+                                                <action selector="updateNotePressed:" destination="HlW-DI-5yB" id="DuS-Rp-AvG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -147,7 +162,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h2Z-6C-goJ">
                                 <rect key="frame" x="16" y="122" width="343" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -167,6 +181,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQc-Qv-mdx"/>
                     </view>
+                    <connections>
+                        <outlet property="messageTextView" destination="h2Z-6C-goJ" id="vnL-pX-hO7"/>
+                        <outlet property="titleTextField" destination="y6i-LE-gZG" id="qi7-gW-cvy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7x-VD-IqK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,7 +192,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lsz-AC-my4"/>
+        <segue reference="ezb-D0-iyX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
