@@ -8,28 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		37F8C4E6164B590684C1DFDA /* Pods_Drips.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E993D2F7DA2FEE3E366DD4 /* Pods_Drips.framework */; };
+		FD03444B2003174200F8C859 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD03444A2003174200F8C859 /* MainViewController.swift */; };
+		FD03444E2003180500F8C859 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD03444D2003180500F8C859 /* RealmManager.swift */; };
+		FD0344512003183500F8C859 /* NoteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0344502003183500F8C859 /* NoteDataModel.swift */; };
 		FD71221D1FFE839A00E34D53 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71221B1FFE839A00E34D53 /* NoteTableViewCell.swift */; };
 		FD71221E1FFE839A00E34D53 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD71221C1FFE839A00E34D53 /* NoteTableViewCell.xib */; };
 		FD8A36991FFE0F3A0052AFFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */; };
-		FD8A369B1FFE0F3A0052AFFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A369A1FFE0F3A0052AFFE /* ViewController.swift */; };
 		FD8A369E1FFE0F3A0052AFFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A369C1FFE0F3A0052AFFE /* Main.storyboard */; };
 		FD8A36A01FFE0F3A0052AFFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A369F1FFE0F3A0052AFFE /* Assets.xcassets */; };
 		FD8A36A31FFE0F3A0052AFFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A36A11FFE0F3A0052AFFE /* LaunchScreen.storyboard */; };
+		FDCDD213200327A3004A873A /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDD212200327A3004A873A /* AddNoteViewController.swift */; };
+		FDCDD217200327D6004A873A /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCDD216200327D6004A873A /* EditNoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		23EE7ABEE3625D5880A8137C /* Pods-Drips.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drips.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Drips/Pods-Drips.debug.xcconfig"; sourceTree = "<group>"; };
 		71E993D2F7DA2FEE3E366DD4 /* Pods_Drips.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drips.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C65B77B76C28EC60E272BD0 /* Pods-Drips.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Drips.release.xcconfig"; path = "Pods/Target Support Files/Pods-Drips/Pods-Drips.release.xcconfig"; sourceTree = "<group>"; };
+		FD03444A2003174200F8C859 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FD03444D2003180500F8C859 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		FD0344502003183500F8C859 /* NoteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataModel.swift; sourceTree = "<group>"; };
 		FD71221B1FFE839A00E34D53 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		FD71221C1FFE839A00E34D53 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		FD8A36951FFE0F3A0052AFFE /* Drips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD8A369A1FFE0F3A0052AFFE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FD8A369D1FFE0F3A0052AFFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD8A369F1FFE0F3A0052AFFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD8A36A21FFE0F3A0052AFFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD8A36A41FFE0F3A0052AFFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDCDD212200327A3004A873A /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		FDCDD216200327D6004A873A /* EditNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +69,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FD03444C200317F200F8C859 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FD03444F2003181100F8C859 /* DataModel */,
+				FD03444D2003180500F8C859 /* RealmManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		FD03444F2003181100F8C859 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				FD0344502003183500F8C859 /* NoteDataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		FD71221A1FFE837900E34D53 /* Note */ = {
 			isa = PBXGroup;
 			children = (
 				FD71221B1FFE839A00E34D53 /* NoteTableViewCell.swift */,
 				FD71221C1FFE839A00E34D53 /* NoteTableViewCell.xib */,
+				FDCDD212200327A3004A873A /* AddNoteViewController.swift */,
+				FDCDD216200327D6004A873A /* EditNoteViewController.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -91,9 +118,10 @@
 		FD8A36971FFE0F3A0052AFFE /* Drips */ = {
 			isa = PBXGroup;
 			children = (
+				FD03444C200317F200F8C859 /* Realm */,
 				FD71221A1FFE837900E34D53 /* Note */,
 				FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */,
-				FD8A369A1FFE0F3A0052AFFE /* ViewController.swift */,
+				FD03444A2003174200F8C859 /* MainViewController.swift */,
 				FD8A369C1FFE0F3A0052AFFE /* Main.storyboard */,
 				FD8A369F1FFE0F3A0052AFFE /* Assets.xcassets */,
 				FD8A36A11FFE0F3A0052AFFE /* LaunchScreen.storyboard */,
@@ -234,9 +262,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8A369B1FFE0F3A0052AFFE /* ViewController.swift in Sources */,
+				FD03444B2003174200F8C859 /* MainViewController.swift in Sources */,
+				FD03444E2003180500F8C859 /* RealmManager.swift in Sources */,
+				FDCDD213200327A3004A873A /* AddNoteViewController.swift in Sources */,
+				FDCDD217200327D6004A873A /* EditNoteViewController.swift in Sources */,
 				FD8A36991FFE0F3A0052AFFE /* AppDelegate.swift in Sources */,
 				FD71221D1FFE839A00E34D53 /* NoteTableViewCell.swift in Sources */,
+				FD0344512003183500F8C859 /* NoteDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
