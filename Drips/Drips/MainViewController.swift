@@ -24,6 +24,8 @@ class MainViewController: UIViewController {
     func configureNoteTableView(){
         noteTableView.delegate = self
         noteTableView.dataSource = self
+        noteTableView.rowHeight = 100
+        noteTableView.separatorStyle = .none
         noteTableView.register(NoteTableViewCell.self, forCellReuseIdentifier: "NoteTableViewCell")
         noteTableView.register(UINib.init(nibName: "NoteTableViewCell", bundle:nil), forCellReuseIdentifier: "NoteTableViewCell")
     }
