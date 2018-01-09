@@ -119,7 +119,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="LUq-al-SXv"/>
+                                    <action selector="closePressed:" destination="6P9-Of-lt2" eventType="touchUpInside" id="7Ya-Gm-mBJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq0-f7-8gI">
@@ -197,7 +197,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="nqp-rl-pbg"/>
+                                    <action selector="closePressed:" destination="HlW-DI-5yB" eventType="touchUpInside" id="LRB-zc-1AM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P7-xV-Ply">
@@ -268,8 +268,5 @@
         <image name="background" width="137" height="235"/>
         <image name="plus" width="50" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="nqp-rl-pbg"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

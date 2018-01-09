@@ -16,6 +16,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var navigationView: UIView!
     @IBOutlet weak var navigationTitleLabel: UILabel!
     
+    var refresh: UIRefreshControl!
     var notes:Results<NoteDataModel>!
     
     override func viewDidLoad() {
@@ -41,6 +42,9 @@ class MainViewController: BaseViewController {
     }
     
     func configureNoteTableView(){
+        refresh = UIRefreshControl()
+        noteTableView.addSubview(refresh)
+        refresh.addTarget(self, action: #selector(refreshNotes), for: .valueChanged)
         noteTableView.delegate = self
         noteTableView.dataSource = self
         noteTableView.rowHeight = 70
@@ -51,7 +55,17 @@ class MainViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.refreshNotes()
+    }
+    
+    @objc func refreshNotes(){
+        guard let notesResult = RealmManager.shared.getNotes() else {
+            refresh.endRefreshing()
+            return
+        }
+        notes = notesResult
         noteTableView.reloadData()
+        refresh.endRefreshing()
     }
 }
 
@@ -67,7 +81,9 @@ extension MainViewController:UITableViewDelegate, UITableViewDataSource {
         let blurredView = self.getBlurEffectView(style: .light, frame: frame, alpha: 1)
         blurredView.layer.cornerRadius = 5
         blurredView.layer.masksToBounds = true
-        cell.insertSubview(blurredView, at: 0)
+        let backgroundContainer = UIView(frame: CGRect(x: 0, y: 0, width: cell.bounds.width, height: cell.bounds.height))
+        backgroundContainer.addSubview(blurredView)
+        cell.backgroundView = backgroundContainer
         
         return cell
     }

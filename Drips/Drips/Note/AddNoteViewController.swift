@@ -38,6 +38,11 @@ class AddNoteViewController: BaseViewController {
         self.messageTextView.insertSubview(self.getBlurEffectView(style: .light, frame: self.messageTextView.bounds, alpha: 1), at: 0)
     }
     
+    
+    @IBAction func closePressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addNotePressed(_ sender: Any) {
         guard let titleText = titleTextField.text,
             let messageText = messageTextView.text else {
