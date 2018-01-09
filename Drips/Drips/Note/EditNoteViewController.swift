@@ -28,6 +28,9 @@ class EditNoteViewController: BaseViewController {
     }
     
     func configureTextFields(){
+        let paddingView = UIView(frame: CGRect(x: 0,y: 0,width: 5,height: self.titleTextField.frame.height))
+        self.titleTextField.leftView = paddingView
+        self.titleTextField.leftViewMode = .always
         self.titleTextField.layer.cornerRadius = 5
         self.titleTextField.layer.masksToBounds = true
         self.titleTextField.background = imageWithView(view: self.getBlurEffectView(style: .light, frame: self.titleTextField.bounds, alpha: 1))

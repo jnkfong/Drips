@@ -140,7 +140,7 @@
                                     <constraint firstAttribute="height" constant="50" id="jOm-Tx-qdU"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
@@ -200,18 +200,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="nqp-rl-pbg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6i-LE-gZG">
-                                <rect key="frame" x="16" y="84" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h2Z-6C-goJ">
-                                <rect key="frame" x="16" y="122" width="343" height="525"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P7-xV-Ply">
                                 <rect key="frame" x="199" y="20" width="160" height="30"/>
                                 <constraints>
@@ -225,6 +213,22 @@
                                     <action selector="updateNotePressed:" destination="HlW-DI-5yB" eventType="touchUpInside" id="GY1-md-ksB"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y6i-LE-gZG">
+                                <rect key="frame" x="16" y="71" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="O75-FH-eYM"/>
+                                </constraints>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h2Z-6C-goJ">
+                                <rect key="frame" x="16" y="146" width="343" height="501"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -242,8 +246,9 @@
                             <constraint firstItem="cIv-hT-dM8" firstAttribute="bottom" secondItem="JQc-Qv-mdx" secondAttribute="bottom" id="dRr-iW-eC2"/>
                             <constraint firstItem="JQc-Qv-mdx" firstAttribute="trailing" secondItem="y6i-LE-gZG" secondAttribute="trailing" constant="16" id="i2v-SF-Uy0"/>
                             <constraint firstItem="9ev-dq-6Zx" firstAttribute="top" secondItem="JQc-Qv-mdx" secondAttribute="top" id="kkG-oi-E2Q"/>
-                            <constraint firstItem="h2Z-6C-goJ" firstAttribute="top" secondItem="y6i-LE-gZG" secondAttribute="bottom" constant="8" id="lBg-Dn-QQO"/>
                             <constraint firstItem="JQc-Qv-mdx" firstAttribute="trailing" secondItem="4P7-xV-Ply" secondAttribute="trailing" constant="16" id="ran-SW-Sc6"/>
+                            <constraint firstItem="h2Z-6C-goJ" firstAttribute="top" secondItem="y6i-LE-gZG" secondAttribute="bottom" constant="25" id="wbY-AE-VSJ"/>
+                            <constraint firstItem="y6i-LE-gZG" firstAttribute="top" secondItem="9ev-dq-6Zx" secondAttribute="bottom" constant="21" id="whB-ji-0BW"/>
                             <constraint firstItem="cIv-hT-dM8" firstAttribute="top" secondItem="h0N-BY-K0d" secondAttribute="top" id="xcY-uC-5eZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQc-Qv-mdx"/>

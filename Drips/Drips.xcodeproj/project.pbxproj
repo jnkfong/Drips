@@ -99,13 +99,6 @@
 			path = Note;
 			sourceTree = "<group>";
 		};
-		FD83C59520045795006133EC /* Static */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Static;
-			sourceTree = "<group>";
-		};
 		FD8A368C1FFE0F3A0052AFFE = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +120,6 @@
 		FD8A36971FFE0F3A0052AFFE /* Drips */ = {
 			isa = PBXGroup;
 			children = (
-				FD83C59520045795006133EC /* Static */,
 				FD03444C200317F200F8C859 /* Realm */,
 				FD71221A1FFE837900E34D53 /* Note */,
 				FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */,
