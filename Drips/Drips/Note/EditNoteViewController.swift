@@ -8,15 +8,32 @@
 
 import UIKit
 
-class EditNoteViewController: UIViewController {
+class EditNoteViewController: BaseViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var bckgrdImageView: UIImageView!
+    
     var note: NoteDataModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextField.text = note?.title
         messageTextView.text = note?.message
+        self.configureBackground()
+        self.configureTextFields()
+    }
+    
+    func configureBackground(){
+        self.bckgrdImageView.addSubview(self.getBlurEffectView(style: .dark, frame: self.view.bounds, alpha: 1))
+    }
+    
+    func configureTextFields(){
+        self.titleTextField.layer.cornerRadius = 5
+        self.titleTextField.layer.masksToBounds = true
+        self.titleTextField.background = imageWithView(view: self.getBlurEffectView(style: .light, frame: self.titleTextField.bounds, alpha: 1))
+        self.messageTextView.layer.cornerRadius = 5
+        self.messageTextView.layer.masksToBounds = true
+        self.messageTextView.insertSubview(self.getBlurEffectView(style: .light, frame: self.messageTextView.bounds, alpha: 1), at: 0)
     }
     
     @IBAction func updateNotePressed(_ sender: Any) {

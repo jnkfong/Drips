@@ -13,6 +13,7 @@
 		FD0344512003183500F8C859 /* NoteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0344502003183500F8C859 /* NoteDataModel.swift */; };
 		FD71221D1FFE839A00E34D53 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD71221B1FFE839A00E34D53 /* NoteTableViewCell.swift */; };
 		FD71221E1FFE839A00E34D53 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD71221C1FFE839A00E34D53 /* NoteTableViewCell.xib */; };
+		FD83C594200451B0006133EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83C593200451B0006133EC /* BaseViewController.swift */; };
 		FD8A36991FFE0F3A0052AFFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */; };
 		FD8A369E1FFE0F3A0052AFFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8A369C1FFE0F3A0052AFFE /* Main.storyboard */; };
 		FD8A36A01FFE0F3A0052AFFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8A369F1FFE0F3A0052AFFE /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		FD0344502003183500F8C859 /* NoteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDataModel.swift; sourceTree = "<group>"; };
 		FD71221B1FFE839A00E34D53 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		FD71221C1FFE839A00E34D53 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		FD83C593200451B0006133EC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Drips/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		FD8A36951FFE0F3A0052AFFE /* Drips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD8A369D1FFE0F3A0052AFFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,13 @@
 			path = Note;
 			sourceTree = "<group>";
 		};
+		FD83C59520045795006133EC /* Static */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
 		FD8A368C1FFE0F3A0052AFFE = {
 			isa = PBXGroup;
 			children = (
@@ -118,9 +127,11 @@
 		FD8A36971FFE0F3A0052AFFE /* Drips */ = {
 			isa = PBXGroup;
 			children = (
+				FD83C59520045795006133EC /* Static */,
 				FD03444C200317F200F8C859 /* Realm */,
 				FD71221A1FFE837900E34D53 /* Note */,
 				FD8A36981FFE0F3A0052AFFE /* AppDelegate.swift */,
+				FD83C593200451B0006133EC /* BaseViewController.swift */,
 				FD03444A2003174200F8C859 /* MainViewController.swift */,
 				FD8A369C1FFE0F3A0052AFFE /* Main.storyboard */,
 				FD8A369F1FFE0F3A0052AFFE /* Assets.xcassets */,
@@ -209,11 +220,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Drips/Pods-Drips-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -267,6 +280,7 @@
 				FDCDD213200327A3004A873A /* AddNoteViewController.swift in Sources */,
 				FDCDD217200327D6004A873A /* EditNoteViewController.swift in Sources */,
 				FD8A36991FFE0F3A0052AFFE /* AppDelegate.swift in Sources */,
+				FD83C594200451B0006133EC /* BaseViewController.swift in Sources */,
 				FD71221D1FFE839A00E34D53 /* NoteTableViewCell.swift in Sources */,
 				FD0344512003183500F8C859 /* NoteDataModel.swift in Sources */,
 			);
@@ -409,11 +423,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5A45R8BL62;
 				INFOPLIST_FILE = Drips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThinkBox.Drips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -425,11 +440,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5A45R8BL62;
 				INFOPLIST_FILE = Drips/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThinkBox.Drips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

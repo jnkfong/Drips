@@ -7,5 +7,6 @@ target 'Drips' do
 
   # Pods for Drips
   pod 'RealmSwift'
+  pod 'IQKeyboardManagerSwift'
 
 end

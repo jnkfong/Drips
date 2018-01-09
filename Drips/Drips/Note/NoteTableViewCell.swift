@@ -11,10 +11,11 @@ import UIKit
 class NoteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bckgrdView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.configureCellView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,4 +24,7 @@ class NoteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configureCellView(){
+        self.selectionStyle = .none
+    }
 }

@@ -9,22 +9,41 @@
 import UIKit
 import RealmSwift
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
 
     @IBOutlet weak var noteTableView: UITableView!
+    @IBOutlet weak var bckgrdImageView: UIImageView!
+    @IBOutlet weak var navigationView: UIView!
+    @IBOutlet weak var navigationTitleLabel: UILabel!
+    
     var notes:Results<NoteDataModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let notesResult = RealmManager.shared.getNotes() else { return }
         notes = notesResult
+        self.configureBackground()
+        self.configureNagivationView()
         self.configureNoteTableView()
+    }
+   
+    func configureBackground(){
+        self.bckgrdImageView.addSubview(self.getBlurEffectView(style: .dark, frame: self.view.bounds, alpha: 1))
+    }
+    
+    func configureNagivationView(){
+        let bounds = CGRect(x: 0, y: 0, width: self.navigationView.frame.width, height: self.navigationView.frame.height)
+        let blurredView = self.getBlurEffectView(style: .light, frame: bounds, alpha: 1)
+        blurredView.layer.cornerRadius = 5
+        blurredView.layer.masksToBounds = true
+        self.navigationView.insertSubview(blurredView, at: 0)
+        self.navigationTitleLabel.text = "Notes"
     }
     
     func configureNoteTableView(){
         noteTableView.delegate = self
         noteTableView.dataSource = self
-        noteTableView.rowHeight = 100
+        noteTableView.rowHeight = 70
         noteTableView.separatorStyle = .none
         noteTableView.register(NoteTableViewCell.self, forCellReuseIdentifier: "NoteTableViewCell")
         noteTableView.register(UINib.init(nibName: "NoteTableViewCell", bundle:nil), forCellReuseIdentifier: "NoteTableViewCell")
@@ -44,6 +63,12 @@ extension MainViewController:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTableViewCell", for: indexPath) as! NoteTableViewCell
         cell.titleLabel.text = notes[indexPath.row].title
+        let frame = CGRect(x: 0, y: 0, width: cell.bounds.width, height: cell.bounds.height - 10)
+        let blurredView = self.getBlurEffectView(style: .light, frame: frame, alpha: 1)
+        blurredView.layer.cornerRadius = 5
+        blurredView.layer.masksToBounds = true
+        cell.insertSubview(blurredView, at: 0)
+        
         return cell
     }
     
